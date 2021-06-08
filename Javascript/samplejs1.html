@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- JavaScript is one of the 3 languages all web developers must learn:
+   HTML to define the content of web pages
+   CSS to specify the layout of web pages
+   JavaScript to program the behavior of web pages -->
+
+   <script src="samplejs1.js"></script>
+        <h1 id="change">Changing the content</h1>
+   <p id="demo"></p>
+   <script>
+    //    Content will display in browser
+       document.write(4+3)
+       document.getElementById("demo").innerHTML="Iam from Javascript Paragraph"
+    //    Content will display in console
+       console.log("Hello world")
+
+    // Popup boxes or alert
+        window.alert("Hi")
+        confirm("yes")
+        prompt("Enter your name")
+
+        
+       
+
+   </script>
+   <!-- Javascript can change the  content -->
+
+   <button type="button" onclick='document.getElementById("change").innerHTML="Hello Javascript"'>Click to change</button>
+   <br>
+   <!-- Applying css -->
+   <h3>Iam from Css </h3>
+   <button type="button" onclick="document.getElementById('demo').style.color='red'">Click Me</button>
+   <br>
+   <!-- JavaScript can hide HTML elements -->
+   <p id="hide">JavaScript can hide HTML elements</p>
+
+    <button type="button" onclick="document.getElementById('hide').style.display='none'">Click Me!</button>
+<br>
+    <!-- JavaScript can show hidden HTML elements -->
+    <p>JavaScript can show hidden HTML elements</p>
+
+    <p id="show" style="display:none">show hidden element</p>
+
+    <button type="button" onclick="document.getElementById('show').style.display='block'">Click Meto display</button>
+
+
+</body>
+</html>
