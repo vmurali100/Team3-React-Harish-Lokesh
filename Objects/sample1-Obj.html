@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <p id="displayObj"></p>
+    <script>
+        var myCar={
+            carName:"XUV",
+            price:1500000,
+            seatCapacity:7,
+        }  //Curly Brace method to create an Object
+
+        // We can add property to object with . Notation
+        myCar.fuel="Diesel"
+
+        // We can add property to object by [] Notation
+        myCar["year"]=2019
+
+        // document.write("Car Name : " +myCar.carName +"<br>"+ "Price : "+
+        //  myCar.price + "<br>" + "Fuel : "+myCar.fuel + "<br>"+ "Year : "+ myCar.year)
+
+        document.getElementById("displayObj").innerHTML="Car Name : " +myCar.carName +"<br>"+ "Price : "+
+        myCar.price + "<br>" + "Fuel : "+myCar.fuel + "<br>"+ "Year : "+ myCar.year
+
+        console.log(myCar.carName)
+
+
+        // document.write("Hello Javascript")
+    </script>
+</body>
+</html>
