@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="displayFullName"></p>
+
+    <!-- OOP way of Creating An Object
+        we have three types of creating object
+        1.Builtin Object Method
+        2.Constructor Function 
+        3. Class Way 
+        Objects use names to access its "members"
+        var person = {firstName:"Leela", lastName:"Vathi", age:39};
+    -->
+    <script>
+        // 1.Builtin Object Method
+
+        var persoName=new Object({
+            fName:"Sai",
+            lName:"Krishna"
+        })
+        document.write(persoName.fName+persoName.lName +"<br>")
+        console.log(persoName.fName+persoName.lName)
+
+        // 2. Constructor Function 
+        function fullName(fname,lName){
+            this.fname=fname,
+            this.lName=lName
+        }
+        var person=new fullName("Murali","Krishna")
+        document.write(person.fname+person.lName)
+
+        // // 3.Class Way
+        class student{
+            constructor(fname,lName){
+                this.fname=fname,
+                this.lName=lName
+                }
+            
+        }
+        var details=new student("leela","vathi")
+        document.getElementById("displayFullName").innerHTML=details.fname +details.lName
+        
+
+
+        console.log(person)
+        console.log(details)
+    </script>
+</body>
+</html>

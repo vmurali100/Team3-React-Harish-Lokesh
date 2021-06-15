@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+         What is an Array?
+    An array is a special variable, which can hold more than one value at a time. 
+    what if you want to loop through the names and find a specific one? And what if you had not 3 names, but 300?
+
+    The solution is an array!
+
+    An array can hold many values under a single name, 
+    and you can access the values by referring to an index number.
+    and the index number willstart from 0
+
+    1.Creating an Array
+        Using an array literal is the easiest way to create a JavaScript Array.
+        Syntax:
+        var array_name = [name1, name2, ...];  
+    
+    Example
+        Access the Full Array
+        var  namess = ["Leela", "Lokesh", "Harish"];
+        document.getElementById("demo").innerHTML = names;
+        
+    JavaScript array elements are accessed using numeric indexes (starting from 0)
+        var  namess = ["Leela", "Lokesh", "Harish"];
+        document.getElementById("demo").innerHTML = names[0]
+
+    Changing an Array Element
+        var  namess = ["Leela", "Lokesh", "Harish"];
+        names[0]="Murali";
+        document.getElementById("demo").innerHTML = names[0]
+    
+    Arrays are Objects
+    Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+        But, JavaScript arrays are best described as arrays.
+        Arrays use numbers to access its "elements".
+        var  names = ["Leela", "Lokesh", "Harish"];
+        document.getElementById("demo").innerHTML = names[0]
+
+    Array Elements Can Be Objects
+        JavaScript variables can be objects. Arrays are special kinds of objects.
+        Because of this, you can have variables of different types in the same Array.
+        You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:
+
+    Array Properties and Methods
+        The real strength of JavaScript arrays are the built-in array properties and methods:
+        
+    The length Property
+        The length property returns the length of an array
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits.length;
+        The length property is always one more than the highest array index.
+
+    Accessing the First Array Element
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits[0];
+    
+    Accessing the Last Array Element
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits[fruits.length-1];
+
+    How to Recognize an Array
+         the JavaScript operator typeof returns "object":
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = typeof fruits;
+    The typeof operator returns object because a JavaScript array is an object.
+
+      
+    When to Use Arrays. When to use Objects.
+        You should use objects when you want the element names to be strings (text).
+        You should use arrays when you want the element names to be numbers.
+
+
+
+-->
+
+
+
+
+
+</body>
+</html>
