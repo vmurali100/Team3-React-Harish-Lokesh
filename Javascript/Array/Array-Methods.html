@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="dispLaptops"></p>
+    <script>
+        var laptops=["Hp","Lenova","Dell","Mac"]
+
+        // document.getElementById("dispLaptops").innerHTML=laptops.toString();
+        // document.write(laptops.toString())
+
+        // document.getElementById("dispLaptops").innerHTML=laptops.join()
+
+        // document.getElementById("dispLaptops").innerHTML=laptops.pop()
+        // document.write(laptops)
+
+        // document.getElementById("dispLaptops").innerHTML=laptops.push("Thinkpad")
+        // document.write(laptops)
+        // document.getElementById("dispLaptops").innerHTML=laptops.shift()
+        // document.write(laptops)
+        // laptops.unshift("Asus")
+        // document.getElementById("dispLaptops").innerHTML=laptops
+        // document.getElementById("dispLaptops").innerHTML=laptops.length
+        // delete laptops[1]
+        // document.getElementById("dispLaptops").innerHTML=laptops
+
+        // laptops.splice(2,0,"Thinkpad") //Adding an element by using splice method
+        // document.getElementById("dispLaptops").innerHTML=laptops;
+
+        // laptops.splice(2) //Removing the elements by using splice menthod
+        // document.getElementById("dispLaptops").innerHTML=laptops;
+
+        // var frontEnd = ["HTML", "Css","Javascript"];
+        // var backEnd = ["nodeJs", ".Net"];
+        // var FullStack = frontEnd.concat(backEnd);
+        // document.getElementById("dispLaptops").innerHTML=FullStack;
+
+        var laptop =laptops.slice(1); //Slice method it will remove and return a new array
+        document.getElementById("dispLaptops").innerHTML = laptops + "<br><br>" + laptop;
+
+    </script>
+</body>
+</html>
