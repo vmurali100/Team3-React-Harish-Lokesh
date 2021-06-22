@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="dispName"></p>
+    <h3 id="demo"></h3>
+    <script>
+        // Named Function
+        function sayHello(fName,lName){
+           console.log("Hello function"+ '  ' + fName + lName) 
+           document.getElementById("dispName").innerHTML=("Hello function"+ '  ' + fName + lName) 
+           alert("Hello function")
+        }
+        sayHello("Harish","Lokesh")
+
+        function myFunction(parameter1, parameter2) {
+        console.log(parameter1*parameter2)
+        return parameter1 + parameter2
+        }
+        document.getElementById("demo").innerHTML = myFunction(4, 3);
+
+        
+    </script>
+</body>
+</html>
