@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 
+        HTML SVG Graphics 
+        What is SVG?  
+        SVG stands for Scalable Vector Graphics
+        SVG is used to define graphics for the Web 
+        The HTML <svg> element is a container for SVG graphics.
+        SVG is a language for describing 2D graphics in XML.
+        SVG has several methods for drawing paths, boxes, circles, text, and graphic images.
+        -->
+        <!-- 
+        SVG is XML based, which means that every element is available within the SVG DOM. You can attach JavaScript event handlers for an element.
+        In SVG, each drawn shape is remembered as an object. 
+        If attributes of an SVG object are changed, the browser can automatically re-render the shape.
+        Canvas is rendered pixel by pixel. In canvas, once the graphic is drawn, it is forgotten
+         by the browser. If its position should be changed, 
+        the entire scene needs to be redrawn, including any objects that might have been 
+        covered by the graphic.
+         -->
+         <!-- 
+        Attributes
+            1.cx is The x position
+            2.CY is The Y position
+            3.rx the radius of the x axis
+            4.ry the radius of the y axis 
+          -->
+
+        <!-- Circle -->
+        <svg width="100" height="100">
+            <circle cx="50" cy="50" r="40"
+            stroke="green" stroke-width="4" fill="yellow" />
+        </svg>
+        <hr>
+
+        <!-- <rect>
+    The <rect> element is a basic SVG shape that draws rectangles, defined by their 
+    position, width, and height.The rectangles may have their corners rounded.-->
+        <svg width="400" height="100">
+            <rect width="400" height="100" 
+            style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+          </svg>
+          <hr>
+          <!-- SVG Rounded Rectangle -->
+          <svg width="400" height="180">
+            <rect x="10" y="20" rx="50" ry="50" width="150" height="150"
+            style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+          </svg>
+          <hr>
+          <!-- <polygon>
+        The <polygon> element defines a closed shape consisting of a set of 
+        connected straight line segments.The last point is connected to the first point. -->
+          <svg width="300" height="200">
+            <polygon points="100,10 40,198 190,78 10,78 160,198"
+            style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+          </svg>
+          <hr>
+          <!-- SVG Logo -->
+          <svg height="130" width="500">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"
+                style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                <stop offset="100%"
+                style="stop-color:rgb(255,0,0);stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+            <text fill="#ffffff" font-size="45" font-family="Verdana"
+            x="50" y="86">SVG</text>
+          </svg>       
+          
+          <!-- 
+              Why should you use SVG images?
+        There are a number of reasons to use SVG images, some of which are:
+        SVG images do not lose their quality when zoomed or resized.
+        They can be created and edited with an IDE or text editor.
+        They are accessible and animatable.
+        They have a small file size and are highly scalable.
+        And they can be searched, indexed, scripted, and compressed.
+           -->
+
+           <!-- 
+            The <ellipse> element is an SVG basic shape,
+                 used to create ellipses based on a center coordinate, 
+                 and both their x and y radius.
+            Note: Ellipses are unable to specify the exact orientation of the ellipse 
+            (if, for example, you wanted to draw an ellipse tilted at a 45 degree angle), 
+            but it can be rotated by using the transform attribute.    
+
+           -->
+           <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="10" cy="10" rx="10" ry="10" />
+          </svg>
+
+          <!-- <line>
+            The <line> element is an SVG basic shape used to create a line c
+            onnecting two points. -->
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <line x1="30" y1="30" x2="20" y2="20" stroke="black" />
+              
+                <!-- If you do not specify the stroke
+                     color the line will not be visible -->
+            </svg>
+
+            <!-- <path>
+        The <path> SVG element is the generic element to define a shape. 
+        All the basic shapes can be created with a path element.
+        d This attribute defines the shape of the path. -->
+
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 10,30
+                     A 20,20 0,0,1 50,30
+                     A 20,20 0,0,1 90,30
+                     Q 90,60 50,90
+                     Q 10,60 10,30 z"/>
+          </svg>
+
+        <!-- <polyline>
+     The <polyline> SVG element is an SVG basic shape that creates straight lines
+     connecting several points.Typically a polyline is used to create open shapes 
+     as the last point doesn't have to be connected to the first point.
+     For closed shapes see the <polygon> element. -->
+
+        <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Example of a polyline with the default fill -->
+            <polyline points="0,100 50,25 50,75 100,0" />
+          
+            <!-- Example of the same polyline shape with stroke and no fill -->
+            <polyline points="100,100 150,25 150,75 200,0"
+                      fill="none" stroke="black" />
+          </svg>
+
+ 
+</body>
+</html>
