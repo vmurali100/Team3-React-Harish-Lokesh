@@ -17,17 +17,18 @@
     Function arguments are the values received by the function when it is invoked.
     Inside the function, the arguments (the parameters) behave as local variables.
 
-    Function Invocation
-The code inside the function will execute when "something" invokes (calls) the function:
-
-When an event occurs (when a user clicks a button)
-When it is invoked (called) from JavaScript code
-Automatically (self invoked)
+    ----Function Invocation
+    The code inside the function will execute when "something" invokes (calls) the function:
+    When an event occurs (when a user clicks a button)
+    When it is invoked (called) from JavaScript code
+    Automatically (self invoked)
 
     -->
+
     <!-- Function Return
     When JavaScript reaches a return statement, the function will stop executing.
-    If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement.
+    If the function was invoked from a statement, JavaScript will "return" to execute the code 
+    after the invoking statement.
     Functions often compute a return value. The return value is "returned" back to the "caller": 
     var x = myFunction(4, 3);
     function myFunction(a, b) {
@@ -35,44 +36,35 @@ Automatically (self invoked)
     }
     document.getElementById("demo").innerHTML = x;
 
--->
+   -->
 
-<!-- Self-Invoking Functions
-Function expressions can be made "self-invoking".
+    <!-- Self-Invoking Functions
+    Function expressions can be made "self-invoking".
+    A self-invoking expression is invoked (started) automatically, without being called.
+    Function expressions will execute automatically if the expression is followed by ().
+    You cannot self-invoke a function declaration.
+    You have to add parentheses around the function to indicate that it is a function expression:
+    (function () {
+    document.getElementById("demo").innerHTML = "Hello! I called myself";
+    })(); -->
 
-A self-invoking expression is invoked (started) automatically, without being called.
+    <!-- Arrow Functions
+    Arrow functions allows a short syntax for writing function expressions.
+    You don't need the function keyword, the return keyword, and the curly brackets.
+    Arrow functions do not have their own this. They are not well suited for defining object methods.
+    Arrow functions are not hoisted. They must be defined before they are used.
+    Using const is safer than using var, because a function expression is always constant value.
+    You can only omit the return keyword and the curly brackets if the function is a single statement.
+    Because of this, it might be a good habit to always keep them: 
+    const x = (x, y) => { return x * y };
+    document.getElementById("demo").innerHTML = x(5, 5);
+    -->
 
-Function expressions will execute automatically if the expression is followed by ().
-
-You cannot self-invoke a function declaration.
-
-You have to add parentheses around the function to indicate that it is a function expression:
-(function () {
-  document.getElementById("demo").innerHTML = "Hello! I called myself";
-})(); -->
-
-<!-- Arrow Functions
-Arrow functions allows a short syntax for writing function expressions.
-
-You don't need the function keyword, the return keyword, and the curly brackets.
-
-Arrow functions do not have their own this. They are not well suited for defining object methods.
-
-Arrow functions are not hoisted. They must be defined before they are used.
-
-Using const is safer than using var, because a function expression is always constant value.
-
-You can only omit the return keyword and the curly brackets if the function is a single statement.
- Because of this, it might be a good habit to always keep them: 
-const x = (x, y) => { return x * y };
-document.getElementById("demo").innerHTML = x(5, 5);
--->
-
-<!--Refference 
-    function myFunction(a, b) {
-  return a * b;
-}
-document.getElementById("demo").innerHTML = myFunction(10, 2);  -->
+    <!--Refference 
+        function myFunction(a, b) {
+    return a * b;
+    }
+    document.getElementById("demo").innerHTML = myFunction(10, 2);  -->
     
 
 <!-- Invoking a Function with a Function Constructor

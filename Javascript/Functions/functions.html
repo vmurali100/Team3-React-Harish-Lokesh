@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    <div></div>
     <p id="dispName"></p>
     <h3 id="demo"></h3>
+    <h2 id="val"></h2>
     <script>
         // Named Function
         function sayHello(fName,lName){
@@ -23,6 +25,10 @@
         return parameter1 + parameter2
         }
         document.getElementById("demo").innerHTML = myFunction(4, 3);
+
+        const val=(x,y)=>{return x * y}
+        document.write(val(5,5))
+        document.getElementById("val").innerHTML = val(7, 5);
 
         
     </script>
