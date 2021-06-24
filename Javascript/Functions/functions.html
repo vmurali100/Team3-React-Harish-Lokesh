@@ -13,23 +13,36 @@
     <h2 id="val"></h2>
     <script>
         // Named Function
-        function sayHello(fName,lName){
-           console.log("Hello function"+ '  ' + fName + lName) 
-           document.getElementById("dispName").innerHTML=("Hello function"+ '  ' + fName + lName) 
-           alert("Hello function")
-        }
-        sayHello("Harish","Lokesh")
+        // function sayHello(fName,lName){
+        //    console.log("Hello function"+ '  ' + fName + lName) 
+        //    document.getElementById("dispName").innerHTML=("Hello function"+ '  ' + fName + lName) 
+        //    alert("Hello function")
+        // }
+        // sayHello("Harish","Lokesh")
 
-        function myFunction(parameter1, parameter2) {
-        console.log(parameter1*parameter2)
-        return parameter1 + parameter2
-        }
-        document.getElementById("demo").innerHTML = myFunction(4, 3);
+        // function myFunction(parameter1, parameter2) {
+        // console.log(parameter1*parameter2)
+        // return parameter1 + parameter2
+        // }
+        // document.getElementById("demo").innerHTML = myFunction(4, 3);
 
-        const val=(x,y)=>{return x * y}
-        document.write(val(5,5))
-        document.getElementById("val").innerHTML = val(7, 5);
 
+        // var result=myFunction(5,6)
+        // function myFunction(a,b){
+        //     return a*b;
+        // }
+
+        // document.write(result)
+
+        // (function () {
+        // document.getElementById("demo").innerHTML = "Hello! I called myself";
+        // }());
+
+
+        const x = (x, y) => { return x * y };
+        document.getElementById("val").innerHTML = x(5, 5);
+
+        
         
     </script>
 </body>
