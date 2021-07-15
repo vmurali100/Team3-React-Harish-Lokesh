@@ -9,11 +9,25 @@ function myFunction() {
 </head>
 <body>
 <!-- Click Event -->
-<p ondblclick="myFunction()">Doubleclick this paragraph to trigger a function.</p>
-<button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>
+<!-- <button onclick="displayDate()">Click </button>
+<!-- <button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button> -->
 
 
-<p id="demo"></p>
+<!-- <p id="date"></p> -->
 
+<!-- <script>
+  function displayDate() {
+    document.getElementById("date").innerHTML = Date();
+    } 
+</script> -->
+
+Enter your name: <input type="text" id="fname" onblur="myFunction()">
+
+    <script>
+        function myFunction() {
+     var name = document.getElementById("fname");
+    name.value = name.value.toUpperCase();
+    }
+    </script>
 </body>
 </html>

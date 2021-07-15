@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    <div id="myImage"></div>
+
+    <!-- The javascript for in statement loops through the properties of an object 
+        for in loop itaretes over an object  and each itaretion returns a key
+    the key is used to access the values -->
+    <script>
+        // var person={
+        //     name:"Harish",
+        //     age:23,
+        //     city:"BLr",
+        //     zip:560066
+        // }
+        // Type1
+        // document.write(person.name)
+        // console.log(person.name)
+        //a is representing the object preoperties or keys
+        // for(a in person){
+        //     console.log(person[a])
+        //     document.write(a + " : " +person[a] + "<br>")
+        // }
+
+        //Type 2
+         
+        // var result = "";
+        // for(a in person){
+        //     result = result + a + " : " + person[a] + "<br>";
+        // }
+        // document.getElementById("demo").innerHTML=result;
+
+        // Type3 
+
+        var studentDetails={
+            "_id": "60f018194ee2947b84b3883d",
+    "index": 0,
+    "guid": "3a7056b5-f7ca-42cc-8427-a82cf1d65a93",
+    "isActive": false,
+    "balance": "$1,174.49",
+    "picture": "http://placehold.it/32x32",
+    "age": 30,
+    "eyeColor": "green",
+    "name": "Ferguson Ayers",
+    "gender": "male",
+    "company": "PERMADYNE",
+    "email": "fergusonayers@permadyne.com",
+    "phone": "+1 (970) 582-3600",
+    "address": "333 Macon Street, Weedville, Tennessee, 726",
+    "about": "Id magna voluptate labore nisi magna ad labore enim esse velit fugiat. Do laboris cillum esse est non incididunt voluptate officia adipisicing. Ut ipsum est nostrud ipsum ullamco dolor duis ipsum nostrud do sit ea ut nostrud. Proident id pariatur quis nulla pariatur tempor eu excepteur magna eu ipsum ex nulla. Non exercitation laborum dolore tempor in commodo non ullamco id nostrud nulla. Minim aliqua esse excepteur sit exercitation. Mollit commodo dolore duis do duis ad sit.\r\n",
+    "registered": "2015-07-03T02:51:40 -06:-30",
+    "latitude": 34.730774,
+    "longitude": 72.310217,
+        }
+    delete studentDetails.about
+    var result= "";
+    for(a in studentDetails){
+        if ( a == "picture"){
+            document.getElementById("myImage").setAttribute("src",studentDetails[a])
+        } else{
+            result = result + a + " : " + studentDetails[a]+ "<br>"
+
+        }
+        
+    }
+    document.getElementById("demo").innerHTML=result
+
+    //src will represent the source of the picture and studentDetails[a] will represent the value
+    </script>
+</body>
+</html>

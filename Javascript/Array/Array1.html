@@ -15,22 +15,26 @@
         var studentNames=["Leela","Harish","Lokesh","Sai"];
         // document.write(studentNames)
         //  document.getElementById("displayStudents").innerHTML=studentNames[1,3]
-        console.log(studentNames)
+        // console.log(studentNames)
 
         // Changing an Array Element
-        var  names = ["Leela", "Lokesh", "Harish"];
-        names[1]="Murali";
-        document.getElementById("demo").innerHTML = names
+        // var  names = ["Leela", "Lokesh", "Harish"];
+        // names[1]="Murali";
+        // document.getElementById("demo").innerHTML = names
 
         // Length of an array
         var fruits = ["Banana", "Orange", "Apple", "Mango"];
         // document.getElementById("fruits").innerHTML = fruits.length;
 
         var fruits = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("fruits").innerHTML = fruits[fruits.length-1];
-        document.getElementById("demo").innerHTML = typeof fruits;
+        // document.getElementById("fruits").innerHTML = fruits[fruits.length-1];
+        // document.getElementById("demo").innerHTML = typeof fruits;
 
+        fruits.splice(2,0,"Lemon")
 
+        console.log(fruits)
+
+        document.write(fruits)
     </script>
 </body>
 </html>

@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="myFunction()">Sort it</button>
+    <!-- <button onclick="myFunction()">Sort it</button> -->
+    <p id="demo1"></p>
     <p id="demo"></p>
 
     <!-- JavaScript Sorting Arrays 
@@ -15,13 +16,14 @@
 
     <script>
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.getElementById("demo").innerHTML = fruits;
+    document.getElementById("demo1").innerHTML = fruits;
 
-    function myFunction() {
+    // function myFunction() {
     fruits.sort()
     fruits.reverse();
     document.getElementById("demo").innerHTML = fruits;
-    }
+    console.log(fruits)
+    // }
     </script>
     
 
