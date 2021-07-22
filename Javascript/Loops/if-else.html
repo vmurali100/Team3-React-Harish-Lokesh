@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- if a specified condition is true. I the condition is false another block of the 
+        code will get executed 
+    this ifelse statement is a conditional statements, which are used to perform different actions based on 
+    differenct conditions-->
+
+    <!-- if - if to speciry a block of code to be executed  and if a specified condition is true
+         else - to specify a block of code to be executed , if the same condition is false
+         elseif - to specify a new codition to test,  if the first condition is false
+         switch -to specify many alternative blocks of code to be executed       -->
+
+         <p id="demo"></p>
+         <script>
+            //  document.write(new Date().getDay())
+            var hour=prompt("Enter hour")
+            //  var hour=14;
+             if(hour>6 && hour<12){
+                 document.write("Good Morning")
+             }else if(hour>12 && hour<17){
+                 document.write("Good Afternoon")
+             }else if(hour>17 && hour<19){
+                 document.write("Good Evening")
+             }else{
+                 document.write("Good knight")
+             }
+
+            //  switch Case
+            var user="";
+            switch(user){
+                case "Admin" : console.log("Admin get access full");
+                break;
+                case "Subadmin": console.log("will get access to create and delete")
+                break;
+                default : console.log("Others")
+            }
+
+            var day;
+        switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+        day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case  6:
+            day = "Saturday";
+        }
+        document.getElementById("demo").innerHTML = "Today is " + day;
+
+         </script>
+    
+
+</body>
+</html>
