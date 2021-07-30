@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h2 id="head">Iam from headings</h2>
+    <h3 class="head1">Iam from headings</h3>
+    <h3 class="head2">Iam from headings</h3>
+    <button id="change">Change</button> -->
+
+    <h2 id="heading">Iam from headings-1</h2>
+    <h2 id="heading">Iam from headings-2</h2>
+    <h2 id="heading">Iam from headings</h2>
+    <h2 id="heading">Iam from headings</h2>
+    <h3 class="head1">Iam from headings</h3>
+    <h3 class="head1">Iam from headings</h3>
+    <button onclick="chang()">Change</button>
+    
+    <!-- How you can capture the element or select -->
+    <script>
+        // Single Selector
+        document.getElementById("head").innerHTML="Iam Changing Now"
+        document.querySelector(".head1").style.color="red";
+        document.querySelector(".head1").style.background="grey"
+
+        // Adding an Attribute
+        // document.getElementById("change").setAttribute("onclick","changeColor()")
+        // function changeColor(){
+        //     document.getElementById("head").style.background="red";
+            
+        // }
+        changeColor()
+        // by Using Mutiple Selector
+        // by Using TagName
+        function chang(){
+        // var headings = document.getElementsByTagName("h2")
+        // headings[0].innerHTML="Iam Changing now"
+        // headings[1].style.color="red";
+        //     console.log(headings)
+        //     document.write(headings)
+        //by using querySelectorAll
+        var headings = document.querySelectorAll("#heading")
+        headings[0].innerHTML="Iam Changing now"
+        headings[1].style.color="red";
+            console.log(headings)
+           
+        }
+
+
+
+    </script>
+</body>
+</html>
