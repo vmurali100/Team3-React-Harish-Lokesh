@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <label for="fName">First Name</label>
+        <input type="text" name="" id="fName" onkeyup="getTheName()">
+        <br>
+        <input type="checkbox" name="subject" value="Html" >HTML
+        <input type="checkbox" name="subject" value="Css" >CSS
+        <input type="checkbox" name="subject" value="Bootstrap" >Bootstrap
+        <input type="checkbox" name="subject" value="JavaScript" >JavaScript
+        <input type="checkbox" name="subject" value="Angular" >Angular
+        <input type="checkbox" name="subject" value="ReactJS" >ReactJS
+        <br>
+        <input type="button" value="GetValues" onclick="getValues()">
+
+
+    </form>
+
+    <script>
+        // Accessing checkboxes by getting Values
+        function getTheName(){
+            var enteredValue=document.getElementById("fName").value;
+            console.log(enteredValue)
+        }
+        var selectedSubject=[]
+        function getValues(){
+            var allCheckboxes=document.getElementsByName("subject")
+            allCheckboxes.forEach(sValue=>{
+                // console.log(sValue.value)
+                if(sValue.checked == true){
+                    selectedSubject.push(sValue.value)
+                }
+            })
+            console.log(selectedSubject)
+
+        }
+
+        // 
+    </script>
+</body>
+</html>
