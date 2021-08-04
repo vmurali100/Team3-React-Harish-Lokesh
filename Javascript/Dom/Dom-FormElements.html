@@ -18,31 +18,64 @@
         <input type="checkbox" name="subject" value="Angular" >Angular
         <input type="checkbox" name="subject" value="ReactJS" >ReactJS
         <br>
-        <input type="button" value="GetValues" onclick="getValues()">
+        <!-- <input type="button" value="GetValues" onclick="getValues()"> -->
+        <input type="button" value="Set Values" onclick="setValues()">
+
+        <br>
+        <label for="gender">Select Gener</label><br>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="FeMale">FeMale
+
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </thead>
+            <tbody id="myTbody"></tbody>
+        </table>
 
 
     </form>
 
     <script>
         // Accessing checkboxes by getting Values
-        function getTheName(){
-            var enteredValue=document.getElementById("fName").value;
-            console.log(enteredValue)
-        }
-        var selectedSubject=[]
-        function getValues(){
-            var allCheckboxes=document.getElementsByName("subject")
-            allCheckboxes.forEach(sValue=>{
-                // console.log(sValue.value)
-                if(sValue.checked == true){
-                    selectedSubject.push(sValue.value)
+        // function getTheName(){
+        //     var enteredValue=document.getElementById("fName").value;
+        //     console.log(enteredValue)
+        // }
+        // var selectedSubject=[]
+        // function getValues(){
+        //     var allCheckboxes=document.getElementsByName("subject")
+        //     allCheckboxes.forEach(sValue=>{
+        //         // console.log(sValue.value)
+        //         if(sValue.checked == true){
+        //             selectedSubject.push(sValue.value)
+        //         }
+        //     })
+        //     console.log(selectedSubject)
+
+        // }
+        var settedValues=["Bootstrap","Angular"]
+        function setValues(){
+            var allCheckboxes=document.getElementsByName("subject");
+            settedValues.forEach(sValues=>{
+                allCheckboxes.forEach(selectedSubject=>{
+                    if(selectedSubject.value == sValues) {
+                        selectedSubject.checked = true
+                    }
+                })
+            })
+            var allRButtons=document.getElementsByName("gender")
+            allRButtons.forEach(selectedRButs=>{
+                if(selectedRButs.checked == true){
+                    console.log(selectedRButs.value)
                 }
             })
-            console.log(selectedSubject)
-
+            
         }
-
-        // 
+        
+        
     </script>
 </body>
 </html>
