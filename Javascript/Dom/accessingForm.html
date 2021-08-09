@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First Name</label> <br />
+        <input type="text" id="fname" /> <br />
+        <br />
+        <label for="pizza">Pizza Topping</label> <br />
+        <select name="" id="pizza">
+          <option value="OPT 1">OPT 1</option>
+          <option value="OPT 2">OPT 2</option>
+          <option value="OPT 3">OPT 3</option>
+        </select>
+        <br />
+        <br />
+        <label for="extras">Extras</label> <br />
+        <input type="checkbox" name="extras" value="extra1" /> Extra 1
+        <input type="checkbox" name="extras" value="extra2" />Extra 2
+        <input type="checkbox" name="extras" value="extra3" />Extra 3
+        <input type="checkbox" name="extras" value="extra4" />Extra 4 <br /><br />
+        <label for="delivery">Delivery Instructions</label>
+         <br />
+        <textarea name="" id="delivery" cols="30" rows="10"></textarea>
+         <br />
+        <button onclick="getProduct()" type="button">Get All Valules</button>
+  
+        
+      </form>
+      <table border="1">
+        <thead>
+          <th>First name</th>
+          <th>Pizza</th>
+          <th>Extras</th>
+          <th>Delivery</th>
+        </thead>
+        <tbody id="myTable">
+
+        </tbody>
+      </table>
+
+      <script>
+          var product={
+            fname:"",
+            pizza:"",
+            extras:[],
+            delivery:""
+          }
+
+          function getProduct(){
+              product.fname=document.getElementById("fname").value;
+              product.pizza=document.getElementById("pizza").value;
+              product.delivery=document.getElementById("delivery").value;
+
+              var allCheckboxes=document.getElementsByName("extras")
+              product.extras=[];
+              allCheckboxes.forEach(function(selectedProduct){
+                  if(selectedProduct.checked){
+                      product.extras.push(selectedProduct.value)
+                  }
+              })
+            //   console.log(product)
+              displayProduct(product)
+          }
+
+          function displayProduct(product){
+            var myTr=document.createElement("tr")
+            for(a in product){
+                var myTd=document.createElement("td")
+                myTd.innerHTML=product[a]
+                myTr.appendChild(myTd)
+            }
+            document.getElementById("myTable").appendChild(myTr)
+          }
+         
+      </script>
+  
+</body>
+</html>
