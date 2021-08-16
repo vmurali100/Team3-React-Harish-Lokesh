@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset style="width: 300px; background-color: green;">
+        <legend>Car Names :-</legend>
+        <label for="">Maruthi</label>
+        <input type="text" name="swift" id="Swift"><br><br>
+        <label for="">Toyota</label>
+        <input type="text" name="Innova" id="Innova"><br><br>
+        <label for="">Mahendra</label>
+        <input type="text" name="XUV" id="XUV"><br><br>
+        <label for="">Renault</label>
+        <input type="text" name="Renault" id="Renault"><br><br>
+        <label for="">Audi</label>
+        <input type="text" name="" id="Audi"><br><br>
+        <label for="">Types</label><br>
+        <input type="radio" name="Types" id="" value="Automatic">
+        <input type="radio" name="Types" id="" value="Manual">
+        <label for="">Additional Fittings</label><br>
+        <input type="checkbox" name="Fittings" value="SeatCovers">SeatCovers<br>
+        <input type="Checkbox" name="Fittings" value="Monitors">Monitors<br>
+        <input type="checkbox" name="Fittings" value="Bluetooth">Bluetooth<br>
+        <input type="checkbox" name="Fittings" value="FocusLights">FocusLights<br>
+        <button type="button" onclick="submitForm()">Submit</button>
+
+    </fieldset>
+    </form>
+
+    <hr>
+    <table id="myTable"></table>
+
+    <script>
+  
+    let carNames=[]
+    function submitForm(){
+        let displaCars="";
+        let cars={
+            swift:document.getElementById("Swift").value,
+            Innova:document.getElementById("Innova").value,
+            XUV:document.getElementById("XUV").value,
+            Renault:document.getElementById("Renault").value,
+            Audi:document.getElementById("Audi").value
+       }
+
+       var radiobtns= document.getElementsByName("Types")
+        for(i=0; i<radiobtns.length; i++){
+        if(radiobtns[i].checked){
+        console.log(radiobtns[i].value)
+        //adding Types to cars
+        cars.Types=radiobtns[i].value
+    }
+}
+var checkBoxVales=[]
+var allCheckedBoxes= document.getElementsByName("Fittings")
+
+for(i=0; i<allCheckedBoxes.length; i++){
+    if(allCheckedBoxes[i].checked == true){
+        checkBoxVales.push(allCheckedBoxes[i].value)
+    }
+}
+
+//Adding Checkbox values to Cars
+cars.fittings= checkBoxVales
+    console.log(cars)
+
+        carNames.push(cars)
+        
+        for (i=0; i<carNames.length; i++){
+
+        for(a in carNames[i]){
+            displaCars = displaCars + a + "  :  " +carNames[i][a] + "<br/>"
+        }
+
+        displaCars =displaCars + "<br/>"
+        
+    }
+    document.getElementById("myTable").innerHTML=displaCars 
+        
+    }
+    </script>
+
+</body>
+</html>           
