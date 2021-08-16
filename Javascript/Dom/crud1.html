@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Student Details</legend>
+        <label for="fName">First Name</label>
+        <input type="text"  id="fName">
+        <br>
+        <label for="lName">Last Name</label>
+        <input type="text"  id="lName">
+        <br>
+        <label for="age">Age</label>
+        <input type="number" id="age">
+        <br>
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+        <br>
+        <label for="subjects">subjects</label>
+        <input type="checkbox" name="cource" value="HTML">HTML
+        <input type="checkbox" name="cource" value="Javascript">Javascript
+        <input type="checkbox" name="cource" value="Angular">Angular
+        <br>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </fieldset>
+    </form>
+    <div>
+       <ul id="myUl"></ul>
+    </div>
+
+    <script>
+        function submitForm(){
+            var studentArray=[];
+            var displayStudent=""
+            var studentInfo={
+                fName:document.getElementById("fName").value,
+                lName:document.getElementById("lName").value,
+                age:document.getElementById("age").value
+            }
+
+            var rBtns=document.getElementsByName("gender")
+            for(i=0; i<rBtns.length; i++){
+                if(rBtns[i].checked){
+                    // console.log(rBtns[i].value)
+                    studentInfo.gender=rBtns[i].value;
+                }
+            }
+            var checkedValue=[];
+            var allCheckBoxes=document.getElementsByName("cource")
+            for(i=0; i<allCheckBoxes.length; i++){
+                if(allCheckBoxes[i].checked){
+                    // console.log(allCheckBoxes[i].value)
+                    checkedValue.push(allCheckBoxes[i].value)
+                }
+            }
+           studentInfo.cource=checkedValue
+            studentArray.push(studentInfo)
+            // console.log(studentInfo)
+
+            for(i=0; i<studentArray.length; i++){
+                for(a in studentArray[i]){
+                    displayStudent=displayStudent + a + " : " + studentArray[i][a] + "<br>"
+                }
+                displayStudent=displayStudent+ "<br>"
+            }
+            document.getElementById("myUl").innerHTML=displayStudent
+        }
+    </script>
+
+
+</body>
+</html>
