@@ -21,7 +21,8 @@ function getValues(){
        
     }
     users.push(person)
-    localStorage.setItem("users",JSON.stringify(users))
+    localStorage.setItem("users",JSON.stringify(users)) 
+    clearForm(person)
     // console.log(person)
     displayData(users)
   
@@ -43,6 +44,7 @@ function displayData(users){
        editBtn.innerHTML="Edit"
        editTd.appendChild(editBtn)
        editBtn.setAttribute("class","btn btn-warning")
+       editBtn.setAttribute("onclick","editUser("+i+")")
        myTr.appendChild(editTd)
       
        var delTd=document.createElement("td")
