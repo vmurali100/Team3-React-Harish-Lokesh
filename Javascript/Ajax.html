@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form >
+        <fieldset style="width: 300px;">
+            <legend>Student Details :-</legend>
+        <label for="fName">First Name</label>
+        <input type="text" id="fName" name="fName"><br><br>
+        <label for="lName">Last Name</label>
+        <input type="text" id="lName" name="lName"><br><br>
+        <label for="email">EMail-Id</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <input type="button" value="Submit" onclick="submitForm()" id="submit">
+        <input type="button" value="Update" onclick="updateForm()" id="update" style="display: none;">
+
+
+    </fieldset>
+    </form>
+
+    <table class="table" border="1">
+        <thead>
+          <tr>
+            <th >Fname</th>
+            <th >Last Name</th>
+            <th>Email</th>
+            <th >Id</th>
+            <th>Edit</th>
+            <th>Delete</th>
+           
+          </tr>
+        </thead>
+        <tbody id="myTbody">     
+        </tbody>
+      </table>
+    <script>
+        var users = [];
+        function submitForm(){
+            var person={
+                fName:"",
+                lName:"",
+                email:""
+            }
+            for(a in person){
+                person[a]=document.getElementById(a).value;
+            }
+            postData(person)
+        }
+               //AJAX Asynchronous JavaScript And XML
+        function postData(person){
+            var postInfo = new XMLHttpRequest() // It is an builtin class 
+            postInfo.onreadystatechange = function(){ //with help of class by creating an instance
+                if(postInfo.readyState == 4 && postInfo.status == 201){ //We check the status
+                    console.log("object Created")
+                    clearForm()
+                    getAllUsers()
+                }
+            }
+            postInfo.open("POST","http://localhost:3000/users")
+            postInfo.setRequestHeader("Content-Type","application/json") //when we send data to server ,we are configaring 
+            postInfo.send(JSON.stringify(person)) // converting the data 
+
+        }
+
+        function getAllUsers(){
+            var postInfo = new XMLHttpRequest()
+            postInfo.onreadystatechange = function(){
+                if(postInfo.readyState == 4 && postInfo.status == 200){
+                    // console.log(postInfo.response) // response is a inbuilt property
+                   users= JSON.parse(postInfo.response)
+                    displayData(users)
+                }
+            }
+            postInfo.open("GET","http://localhost:3000/users")
+            postInfo.send()
+        }
+
+
+        function displayData(users){
+        document.getElementById("myTbody").innerHTML="";
+        //console.log(users)
+        users.map(function(obj,i){
+       var myTr=document.createElement("tr")
+       for(a in obj){
+           var myTd=document.createElement("td")
+            myTd.innerHTML=obj[a]
+           myTr.appendChild(myTd)
+       }
+        
+       var editTd=document.createElement("td")
+       var editBtn=document.createElement("button")
+       editBtn.innerHTML="Edit"
+       editTd.appendChild(editBtn)
+       editBtn.setAttribute("class","btn btn-warning")
+       editBtn.setAttribute("onclick","editUser("+i+")")
+       myTr.appendChild(editTd)
+      
+       var delTd=document.createElement("td")
+       var delBtn=document.createElement("button")
+       delBtn.innerHTML="delete"
+       delBtn.setAttribute("class"," btn btn-danger")
+       delBtn.setAttribute("onclick","deleteUser("+ i +")")
+       delTd.appendChild(delBtn)
+       myTr.appendChild(delTd)
+
+       
+       document.getElementById("myTbody").appendChild(myTr)
+    })
+
+}
+
+    function deleteUser(i){
+        var postInfo = new XMLHttpRequest()
+            postInfo.onreadystatechange = function(){
+                if(postInfo.readyState == 4 && postInfo.status == 200){
+                //     console.log(postInfo.response) // response is a inbuilt property
+                //    users= JSON.parse(postInfo.response)
+                //     displayData(users)
+                getAllUsers()
+                }
+            }
+            postInfo.open("DELETE","http://localhost:3000/users/"+users[i].id)
+            postInfo.send()
+    }
+
+    function clearForm(){
+        var person={
+                fName:"",
+                lName:"",
+                email:""
+            }
+    for(a in person){
+        document.getElementById(a).value="";
+    }
+}
+
+    function editUser(i){
+        document.querySelector("#submit").style.display="none";
+        document.querySelector("#update").style.display="block";
+        index =i;
+        // console.log(users[i])
+        for(a in users[i]){
+            if(a!= "id"){
+            document.getElementById(a).value=users[i][a];
+        }
+        }
+    }
+
+    function updateForm(){
+        document.querySelector("#submit").style.display="block";
+        document.querySelector("#update").style.display="none";
+        var person={
+                fName:"",
+                lName:"",
+                email:""
+            }
+            for(a in person){
+                person[a]=document.getElementById(a).value;
+            }
+
+                var postInfo = new XMLHttpRequest()
+                postInfo.onreadystatechange = function(){
+                    if(postInfo.readyState == 4 && postInfo.status == 200){
+                        clearForm()
+                    getAllUsers()
+                    }
+                }
+                postInfo.open("PUT","http://localhost:3000/users/"+users[index].id)
+                postInfo.setRequestHeader("Content-Type","application/json") 
+                postInfo.send(JSON.stringify(person))
+            
+    }
+
+    getAllUsers()
+
+    </script>
+</body>
+</html>
