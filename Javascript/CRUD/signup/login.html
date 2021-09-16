@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-6">
+            <form>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password">
+                </div>
+                
+                <button type="button" class="btn btn-primary" onclick="updateInfo()" >Login</button>
+              </form>
+        </div>
+    </div>
+
+    <script>
+        function updateInfo(){
+            var user = {
+                email:document.getElementById("email").value,
+                password:document.getElementById("password").value
+            }
+            var storedValue=JSON.parse(localStorage.getItem("users"))
+
+            if(storedValue.email == user.email && storedValue.password == user.password){
+                window.location.href="dashboard.html"
+            }
+        }
+    </script>
+</body>
+</html>
