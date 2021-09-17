@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	
+	<div class="container">
+		<div class="row">
+		<div class="col-md-4">
+			<div class="panel panel-default" id="MyDetails">
+				<div class="panel-heading" id="studentDetails">Panel heading without title</div>
+				<div class="panel-body">
+					<table class="table">
+    					<tr>
+    						<td>First Name</td><td id="Fname"></td>
+    					</tr>
+    					<tr>
+    						<td>Last Name</td><td id="Lname"></td>
+    					</tr>
+    					<tr>
+    						<td>Email</td><td id="Email"></td>
+    					</tr>
+    					<tr>
+    						<td>Address</td><td id="Address"></td>
+    					</tr>
+  					</table>
+				</div>
+			</div>
+			</div>
+		<!-- javaScript Starting -->
+		<script type="text/javascript">
+			var students = [
+			{
+				"fname": "leela",
+				"Lname": "vathi",
+				"Email": "leelavathikm1@gmail.com",
+				"Address": "Bangalore"
+
+			},
+			{
+				"fname": "murali",
+				"Lname": "krishna",
+				"Email": "vmurali100@gmail.com",
+				"Address": "chittoor"
+			},
+			{
+				"fname": "gaye",
+				"Lname": "bangaru",
+				"Email": "Gayathri@gmail.com",
+				"Address": "Kammapalli"
+			},
+			{
+				"fname": "hema",
+				"Lname": "sekar",
+				"Email": "hemasekar@gmail.com",
+				"Address": "paradarami"
+			},
+			]
+			var i=0
+
+			function assignValues(){
+			document.getElementById("studentDetails").innerHTML = students[i].fname	
+			document.getElementById("Fname").innerHTML = students[i].fname	
+			document.getElementById("Lname").innerHTML = students[i].Lname	
+			document.getElementById("Email").innerHTML = students[i].Email	
+			document.getElementById("Address").innerHTML = students[i].Address
+			i++	
+			if (i == 4){
+				i = 0
+			}
+			}
+
+			function startSlide(){
+
+			startslide = setInterval(assignValues,1500)
+			}
+			startSlide()
+			document.getElementById("MyDetails").onmouseover = function(){
+				clearInterval(startslide)
+			}
+			document.getElementById("MyDetails").onmouseout = function(){
+				startslide = setInterval(assignValues,1500)
+			}
+
+		</script>
+
+
+		</div>
+	</div>
+</body>
+</html>
