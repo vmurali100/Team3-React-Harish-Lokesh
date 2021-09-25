@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  Prototype is one of the method of adding properties or methods  -->
+    <!-- The prototype property allows you to add new methods to objects constructors:-->
+    <p id="demo"></p>
+<!-- with help of prototype u can add a properties or methods to a class -->
+    <script>
+        function person(first,last,age,){
+            this.firstName=first,
+            this.lastName=last,
+            this.age=age
+        }
+
+        person.prototype.language="English"; //property
+        person.prototype.getFullName=function(){   //method
+            return this.firstName+" " + this.lastName
+        }
+        var myPerson=new person("Leela","KM",39)
+        document.getElementById("demo").innerHTML="Universal Language is : "+ myPerson.language;
+    </script>
+</body>
+</html>

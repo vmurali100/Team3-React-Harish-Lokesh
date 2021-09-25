@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- class can be used to create an object by istantiating -->
+
+    <script>
+        class Person{
+            constructor(cName,empName,empNo){
+                this.companyName=cName,
+                this.empName=empName,
+                this.empNo=empNo
+            }
+        }
+        
+        //Prototype
+        // the methods or properties which is added it will not visible but it is available
+        Person.prototype.email=function(){
+            return this.empName + "@sunline.com"
+        }
+
+        var emp1=new Person("Sunline","Leela","A001")
+        var emp2=new Person("Sunline","Harish","A002")
+
+        console.log(emp1,emp2)
+
+        
+
+       
+    </script>
+
+</body>
+</html>
