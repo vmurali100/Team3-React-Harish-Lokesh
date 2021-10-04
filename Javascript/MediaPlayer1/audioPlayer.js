@@ -35,5 +35,3 @@ jukeBox.addEventListener("click",function (event){
 		event.target.id = 'playing';
 	}
 })
-
- 

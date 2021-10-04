@@ -1,4 +1,6 @@
-﻿
+﻿body {
+
+}
 ul.player {
     width:280px;
     margin:0 auto;
@@ -22,4 +24,3 @@ ul.player li {
     ul.player li#paused {
         background-color:red;
     }
-    
