@@ -1,0 +1,25 @@
+﻿
+ul.player {
+    width:280px;
+    margin:0 auto;
+    margin-top:100px;
+    list-style:none;
+}
+li {
+    list-style-type: none;
+}
+ul.player li {
+    background-color: pink;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    padding:5px;
+}
+    ul.player li#playing {
+        background-color:green;
+    }
+    ul.player li#paused {
+        background-color:red;
+    }
+    
